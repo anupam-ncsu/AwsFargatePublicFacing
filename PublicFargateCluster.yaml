@@ -149,6 +149,7 @@ Resources:
       AllocationId: !GetAtt NatGatewayTwoAttachment.AllocationId
       SubnetId: !Ref PublicSubnetTwo
  
+ # Each private subnet gets to go through a NAT to the outside internet. 
   PrivateRouteTableOne:
     Type: AWS::EC2::RouteTable
     Properties:
@@ -164,6 +165,7 @@ Resources:
     Properties:
       RouteTableId: !Ref PrivateRouteTableOne
       SubnetId: !Ref PrivateSubnetOne
+  
   PrivateRouteTableTwo:
     Type: AWS::EC2::RouteTable
     Properties:
